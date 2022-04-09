@@ -1,4 +1,6 @@
 const Pool = require('pg').Pool
+
+// enter your POSTGRES database info here
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
@@ -28,7 +30,7 @@ const createLog = (request, response) => {
     }
 }
 
-//get log from db
+//get logs from db
 const getLogs = (request, response) => {
     try {
         pool.query('SELECT * FROM logs', (error, results) => {
