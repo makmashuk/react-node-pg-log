@@ -16,9 +16,7 @@ const createLog = (request, response) => {
         pool.query(
             `INSERT INTO logs
              (start_time, end_time, description)
-             VALUES('${start_time}', '${end_time}', '${description}');
-             
-             `
+             VALUES('${start_time}', '${end_time}', '${description}'); `
             , (error, results) => {
                 if (error) {
                     throw error
