@@ -24,19 +24,22 @@ function App() {
 
   const handleSubmit = async(e) =>  {
 
+
     e.preventDefault();
     let log = {
       "start_time": start_time,
       "end_time": end_time,
       "description": description,
     };
-    setDescripotion('');
-    setLogList([...logList, log]);
-    console.log(log);
+   
+   
+
     axios.post(`http://localhost:3001/create-log`, { log })
     .then(res => {
-      console.log(res);
-      console.log(res.data);
+
+      setLogList([...logList, log]);
+      setDescripotion('');
+      
     })
   
   }

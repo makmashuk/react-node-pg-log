@@ -7,6 +7,8 @@ const pool = new Pool({
     port: 5432,
 })
 
+
+//create log to db
 const createLog = (request, response) => {
 
     const { start_time, end_time, description } = request.body.log;
@@ -28,6 +30,7 @@ const createLog = (request, response) => {
     }
 }
 
+//get log from db
 const getLogs = (request, response) => {
     try {
         pool.query('SELECT * FROM logs', (error, results) => {
